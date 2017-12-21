@@ -330,9 +330,13 @@ define(['require',
                 reloadButtonSelector = getDomElementIdentifier('refreshWidgetTrigger'),
                 $widgetElement = $('.js-widget');
 
-            $widgetElement.find(reloadButtonSelector).on('click', function(e) {
-                e.preventDefault();
-                updateWidgetContent($widgetElement.find(contentSelector));
+            $widgetElement.each(function() {
+                var $currentWidget = $(this);
+                $currentWidget.find(reloadButtonSelector).on('click', function(e) {
+                    e.preventDefault();
+                    console.log($currentWidget);
+                    updateWidgetContent($currentWidget.find(contentSelector));
+                });
             });
         }
 
