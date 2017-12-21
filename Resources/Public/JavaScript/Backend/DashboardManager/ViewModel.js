@@ -334,7 +334,6 @@ define(['require',
                 var $currentWidget = $(this);
                 $currentWidget.find(reloadButtonSelector).on('click', function(e) {
                     e.preventDefault();
-                    console.log($currentWidget);
                     updateWidgetContent($currentWidget.find(contentSelector));
                 });
             });
